@@ -83,8 +83,6 @@ while true
 done
 EOF
 
-chmod 755 $ScriptDest
-
 # Write autostart desktop file.
 cat > $StartItDir/$StartItFile << EOF
 [Desktop Entry]
@@ -97,4 +95,8 @@ StartupNotify=true
 MimeType=application/x-shellscript;
 EOF
 
+chmod 755 $ScriptDest $StartItDir/$StartItFile
+
 zenity --info --ok-label="Close" --text="Setup Has Finished\n\nThe changes will start in the next reboot\nYou may delete the Setup file now.\nEnjoy (:"
+
+exit 0
